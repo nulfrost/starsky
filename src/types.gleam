@@ -1,17 +1,20 @@
+import gleam/option.{type Option}
+
 pub type PinnedPost {
   PinnedPost(uri: String, cid: String)
 }
 
 pub type Label {
   Label(
-    ver: Int,
+    // ver: Int,
     src: String,
     uri: String,
     cid: String,
     val: String,
-    neg: Bool,
+    // neg: Option(Bool),
     cts: String,
-    exp: String,
+    // exp: String,
+    // sig: Int,
   )
 }
 
@@ -24,11 +27,17 @@ pub type Chat {
 }
 
 pub type Associated {
-  Associated(lists: Int, feedgens: Int, starter_packs: Int, labeler: Bool)
+  Associated(
+    lists: Int,
+    feed_gens: Int,
+    starter_packs: Int,
+    labeler: Bool,
+    // chat: Chat,
+  )
 }
 
-pub type Actor {
-  Actor(
+pub type Profile {
+  Profile(
     did: String,
     handle: String,
     display_name: String,
@@ -38,7 +47,10 @@ pub type Actor {
     followers_count: Int,
     follows_count: Int,
     posts_count: Int,
+    associated: Associated,
     indexed_at: String,
     created_at: String,
+    labels: List(Label),
+    pinned_post: PinnedPost,
   )
 }
