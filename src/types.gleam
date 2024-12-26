@@ -1,21 +1,9 @@
-import gleam/option.{type Option}
-
 pub type PinnedPost {
   PinnedPost(uri: String, cid: String)
 }
 
 pub type Label {
-  Label(
-    // ver: Int,
-    src: String,
-    uri: String,
-    cid: String,
-    val: String,
-    // neg: Option(Bool),
-    cts: String,
-    // exp: String,
-    // sig: Int,
-  )
+  Label(src: String, uri: String, cid: String, val: String, cts: String)
 }
 
 pub type JoinedViaStartedPack {
@@ -27,13 +15,7 @@ pub type Chat {
 }
 
 pub type Associated {
-  Associated(
-    lists: Int,
-    feed_gens: Int,
-    starter_packs: Int,
-    labeler: Bool,
-    // chat: Chat,
-  )
+  Associated(lists: Int, feed_gens: Int, starter_packs: Int, labeler: Bool)
 }
 
 pub type Profile {
